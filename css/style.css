@@ -8,6 +8,199 @@
     z-index: 99;
 }
 
+/* video opening ala Netflix */
+#videoOpening {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease;
+}
+        
+#videoOpening.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+        
+#openingVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Landing Page Netflix Style */
+#landingPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0b0b0b;
+    z-index: 99998;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#landingPage.show {
+    display: flex;
+    opacity: 1;
+}
+
+#landingPage.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.landing-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #E50914;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.landing-subtitle {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-family: 'Work Sans', sans-serif;
+}
+
+#landingLogo {
+    fill: #E50914;
+    border-radius: 12px;
+    width: 150px;
+    max-width: 80%;
+    height: auto;
+
+    display: block;
+    margin: 0 auto 1.5rem;
+
+    transition: transform 0.3s ease, opacity 1.2s ease;
+}
+
+#landingLogo:hover {
+    transform: scale(1.05);
+}
+
+.guest-name {
+    color: #E50914;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Tombol OPEN INVITATION */
+.open-invitation-btn {
+    padding: 12px 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.open-invitation-btn:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Floating Buttons di samping*/
+.floating-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.floating-buttons.show {
+    display: flex;
+}
+
+.float-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+.float-btn.whatsapp {
+    background: #25D366;
+}
+
+.float-btn.gift,
+.float-btn.music {
+    background: #E50914;
+}
+
+.float-btn i {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+#mainContent {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#mainContent.show {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .landing-title {
+        font-size: 2.5rem;
+    }
+
+    .guest-avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+          
+/*** Fade in ***/
+.fade {
+    opacity: 0;
+    transition: opacity 5.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.fade.show {
+    opacity: 1;
+}
+
 
 /*** Spinner ***/
 #spinner {
