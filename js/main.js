@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Tombol open invitation
 function openInvitation() {
+    goFullScreen();
     const landingPage = document.getElementById("landingPage");
     const mainContent = document.getElementById("mainContent");
     const floatingButtons = document.getElementById("floatingButtons");
@@ -137,6 +138,7 @@ function fadeInMusic(audio, targetVolume = 0.6, duration = 3000) {
     }, stepTime);
 }
 
+//Flotting icon
 function openWhatsApp() {
     window.open("https://wa.me/628xxxxxxxxxx", "_blank");
 }
@@ -163,3 +165,17 @@ function toggleMusic() {
 
     musicPlaying = !musicPlaying;
 }
+
+//klik lalu fullscreen
+function goFullScreen() {
+    const elem = document.documentElement;
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { // Safari
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { // IE/Edge lama
+        elem.msRequestFullscreen();
+    }
+}
+
